@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('welcome');
+
+Route::get('/features','MiscController@features')->name('features');
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+
+
