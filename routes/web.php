@@ -19,5 +19,6 @@ Route::get('/features','MiscController@features')->name('features');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
+Route::resource('articles', 'ArticlesController');
 
 

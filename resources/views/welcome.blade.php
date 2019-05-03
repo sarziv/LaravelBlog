@@ -10,7 +10,10 @@
                     Design laravel simplified.
                 </p>
                 <p>
-                    List of features <a href="{{route('features')}}">features</a>
+                    What is this?
+                    <a href="{{route('features')}}">
+                        <button class="btn btn-outline-dark">Features</button>
+                    </a>
                 </p>
                 <div class="links">
                     Developer: Šarūnas Živila

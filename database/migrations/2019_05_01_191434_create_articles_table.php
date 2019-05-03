@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('title',255);
             $table->string('article_tags');
-            $table->string('image_id');
+            $table->string('image');
             $table->longText('article_info');
             $table->timestamp('created_at')->nullable();
         });

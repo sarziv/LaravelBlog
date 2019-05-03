@@ -9,6 +9,6 @@ class MiscController extends Controller
 
     public function features()
     {
-        return view('layouts.features');
+        return view('Misc.features');
     }
 }
