@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Tags;
-use App\Articles;
 use Illuminate\Http\Request;
 
-class ArticlesController extends Controller
+class TagsController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $articles=Articles::all();
-        return view('dashboard.articles.articles_read', compact('articles'));
+        //
     }
 
     /**
@@ -22,8 +24,7 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        $taglist=Tags::All();
-        return view('dashboard.articles.articles_create',compact('taglist'));
+        //
     }
 
     /**
@@ -34,30 +35,16 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title'=>'required',
-            'article_info'=> 'required',
-            'article_tags' => 'string',
-            'image' => 'string'
-        ]);
-        $articles = new Articles([
-            'title' => $request->get('title'),
-            'article_info'=> $request->get('article_info'),
-            'article_tags'=> $request->get('article_tags'),
-            'image'=> $request->get('image'),
-
-        ]);
-        $articles->save();
-        return redirect('/articles')->with('success', 'Stock has been added');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Tags  $tags
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Tags $tags)
     {
         //
     }
@@ -65,10 +52,10 @@ class ArticlesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Tags  $tags
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Tags $tags)
     {
         //
     }
@@ -77,10 +64,10 @@ class ArticlesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Tags  $tags
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tags $tags)
     {
         //
     }
@@ -88,10 +75,10 @@ class ArticlesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Tags  $tags
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tags $tags)
     {
         //
     }

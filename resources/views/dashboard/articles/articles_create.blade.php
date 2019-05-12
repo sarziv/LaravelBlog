@@ -19,15 +19,26 @@
                                 <label for="article_info">Article:</label>
                                 <textarea class="form-control" name="article_info"></textarea>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group ">
                                 <label for="article_tags">Tags:</label>
-                                <input type="text" class="form-control" name="article_tags"/>
+                                <div class="d-flex justify-content-center">
+
+                                    <div>
+                                        <select class="form-control" id="FormControlSelect">
+                                            @foreach($taglist as $tag)
+                                                <option>{{$tag['tag_name']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                </div>
+
                             </div>
-                            <div class="form-group">
-                                <label for="image">IMG:</label>
-                                <input type="file" class="form-control" name="image"/>
+                            <div class="form-group col-6 offset-3">
+                                <label for="image">Cover image:</label>
+                                <input type="text" class="form-control" name="image"/>
                             </div>
-                            <button type="submit" class="btn btn-primary">Add</button>
+                            <button type="submit" class="btn btn-primary">Create</button>
                         </form>
                     </div>
                 </div>

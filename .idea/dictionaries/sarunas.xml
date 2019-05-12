@@ -4,6 +4,9 @@
       <w>fillable</w>
       <w>imgur</w>
       <w>navbar</w>
+      <w>selectpicker</w>
+      <w>taglist</w>
+      <w>tagslist</w>
     </words>
   </dictionary>
 </component>
