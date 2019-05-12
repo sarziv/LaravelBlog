@@ -24,9 +24,9 @@
                                 <div class="d-flex justify-content-center">
 
                                     <div>
-                                        <select class="form-control" id="FormControlSelect">
+                                        <select class="form-control" id="FormControlSelect" name="article_tags">
                                             @foreach($taglist as $tag)
-                                                <option>{{$tag['tag_name']}}</option>
+                                                <option value="{{$tag['tag_name']}}" >{{$tag['tag_name']}}</option>
                                             @endforeach
                                         </select>
                                     </div>

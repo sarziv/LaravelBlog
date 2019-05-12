@@ -11,7 +11,7 @@ class ArticlesController extends Controller
 
     public function index()
     {
-        $articles=Articles::all();
+        $articles=Articles::All();
         return view('dashboard.articles.articles_read', compact('articles'));
     }
 
@@ -49,6 +49,7 @@ class ArticlesController extends Controller
         ]);
         $articles->save();
         return redirect('/articles')->with('success', 'Stock has been added');
+        //TODO add messages
     }
 
     /**
@@ -59,7 +60,9 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        //
+              $articles = Articles::Find($id);
+
+               return view('dashboard.articles.articles_show', compact('articles'));
     }
 
     /**
@@ -70,7 +73,7 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -93,6 +96,10 @@ class ArticlesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $articles = Articles::find($id);
+        $articles->delete();
+
+        return redirect('/articles')->with('success', 'Stock has been deleted Successfully');
+        //TODO add messages
     }
 }

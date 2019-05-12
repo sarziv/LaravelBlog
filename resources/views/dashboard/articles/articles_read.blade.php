@@ -11,9 +11,9 @@
                         <table class="table table-striped">
                         <thead>
                         <tr>
+                            <td>View</td>
                             <td>ID</td>
                             <td>Title</td>
-                            <td>Article</td>
                             <td>Tags</td>
                             <td>Edit</td>
                             <td>Delete</td>
@@ -22,10 +22,12 @@
                         <tbody>
                         @foreach($articles as $article)
                             <tr>
+                                <td>
+                                <a href="{{ route('articles.show',$article->id)}}" class="btn btn-primary">View</a>
+                                </td>
                                 <td>{{$article->id}}</td>
                                 <td>{{$article->title}}</td>
                                 <td>{{$article->article_tags}}</td>
-                                <td>{{$article->article_info}}</td>
 
                                 <td>
                                     <a href="{{ route('articles.edit',$article->id)}}" class="btn btn-primary">Edit</a>
