@@ -39,13 +39,17 @@ class ArticlesController extends Controller
         $request->validate([
             'title' => 'required',
             'article_info' => 'required',
-            'article_tags' => 'string',
+            'article_tags' => 'array',
             'image' => 'string'
         ]);
+
+        $tagArray = $request->get('article_tags');
+        $taglist = implode(',',$tagArray);
+
         $articles = new Articles([
             'title' => $request->get('title'),
             'article_info' => $request->get('article_info'),
-            'article_tags' => $request->get('article_tags'),
+            'article_tags' => $taglist,
             'image' => $request->get('image'),
 
         ]);

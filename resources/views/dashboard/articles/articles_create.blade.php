@@ -13,31 +13,37 @@
                             <div class="form-group">
                                 @csrf
                                 <label for="title">Title:</label>
-                                <input type="text" class="form-control" name="title"/>
+                                <input type="text" class="form-control" name="title" value="Title worth of a king..."/>
                             </div>
                             <div class="form-group">
                                 <label for="article_info">Article:</label>
-                                <textarea class="form-control" name="article_info"></textarea>
+                                <textarea class="form-control" name="article_info" placeholder="Wonderful article right here..."></textarea>
                             </div>
                             <div class="form-group ">
-                                <label for="article_tags">Tags:</label>
                                 <div class="d-flex justify-content-center">
-
-                                    <div>
-                                        <select class="form-control" id="FormControlSelect" name="article_tags">
+                                    <div class="dropdown">
+                                        <div class="dropbtn">Select tags</div>
+                                        <div class="dropdown-content">
                                             @foreach($taglist as $tag)
-                                                <option value="{{$tag['tag_name']}}" >{{$tag['tag_name']}}</option>
+                                                    <div class="col-12">
+                                                     <label for="{{$tag['tag_name']}}">{{$tag['tag_name']}}</label>
+                                                        <input id="{{$tag['tag_name']}}" type="checkbox" value="{{$tag['tag_name']}}" name="article_tags[]" checked/>
+                                                    </div>
                                             @endforeach
-                                        </select>
+
+                                    </div>
+
                                     </div>
 
                                 </div>
+                                </div>
 
-                            </div>
+
                             <div class="form-group col-6 offset-3">
                                 <label for="image">Cover image:</label>
-                                <input type="text" class="form-control" name="image"/>
+                                <input type="text" class="form-control" name="image" value="Upload you file.."/>
                             </div>
+
                             <button id="submitbutton" type="submit" class="btn btn-primary">Create</button>
                         </form>
                     </div>

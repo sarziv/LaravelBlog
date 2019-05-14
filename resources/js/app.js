@@ -7,6 +7,7 @@ $(document).ready(function () {
     $('button').click(function() {
         this.form.submit();
         $(this).prop('disabled',true);
-        $('.loading').show().delay(1500).fadeIn("slow");
+        $('.loading').show();
     });
+
 });
