@@ -50,7 +50,7 @@ class ArticlesController extends Controller
 
         ]);
         $articles->save();
-        return redirect('/articles')->with('success', 'Stock has been added');
+        return redirect('/articles')->with('success', 'New article was added.');
         //TODO add messages
     }
 
@@ -119,7 +119,7 @@ class ArticlesController extends Controller
         $articles = Articles::findOrFail($id);
         $articles->delete();
 
-        return redirect('/articles')->with('success', 'Stock has been deleted Successfully');
-        //TODO add messages
+        return redirect('/articles')->with('error', 'Article was deleted!');
     }
+
 }

@@ -38,7 +38,7 @@
                                 <label for="image">Cover image:</label>
                                 <input type="text" class="form-control" name="image"/>
                             </div>
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button id="submitbutton" type="submit" class="btn btn-primary">Create</button>
                         </form>
                     </div>
                 </div>

@@ -18,6 +18,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+<div class="loading">
+@include('Misc.loading')
+</div>
     <div id="app">
         @include('layouts.navbar')
         <main class="py-4">
