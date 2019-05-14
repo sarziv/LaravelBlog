@@ -10,8 +10,10 @@
                     <div class="card-body text-center">
                         <div class="row d-flex justify-content-around">
                             <div> ID:{{$articles['id']}}</div>
-                            <div>Article Title: {{$articles['title']}}</div>
+                            <div>Title: {{$articles['title']}}</div>
+                            <div> Tags:{{$articles['article_tags']}}</div>
                         </div>
+
                         <hr>
                         <div>
                             {{$articles['article_info']}}

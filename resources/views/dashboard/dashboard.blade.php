@@ -20,10 +20,8 @@
                             </div>
                         <div class="col-12"><h3>Articles</h3></div>
                         <div class="d-inline ">
-                           <a href="{{route('articles.index')}}"><button class="btn btn-outline-primary">Read Articles</button></a>
-                           <a href="{{route('articles.create')}}"><button class="btn btn-outline-primary">Add Articles</button></a>
-                           <a href="{{route('articles.create')}}"><button class="btn btn-outline-primary">Update Articles</button></a>
-                           <a href="{{route('articles.create')}}"><button class="btn btn-outline-danger">Delete Articles</button></a>
+                           <a href="{{route('articles.index')}}"><button class="btn btn-outline-primary">Articles Dashboard</button></a>
+                           <a href="{{route('articles.create')}}"><button class="btn btn-outline-primary">New Articles</button></a>
                         </div>
                             <div class="col-12"><h3>Tags</h3></div>
                             <div class="d-inline ">
