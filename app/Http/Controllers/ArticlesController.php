@@ -101,6 +101,7 @@ class ArticlesController extends Controller
             'image' => 'string'
         ]);
         $article = Articles::findorfail($id);
+        //TODO article tags , array to sting
 
         $article->title = $request->get('title');
         $article->article_info = $request->get('article_info');
