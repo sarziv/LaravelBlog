@@ -37,10 +37,10 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'article_info' => 'required',
-            'article_tags' => 'array',
-            'image' => 'string'
+            'title' => 'string|required',
+            'article_info' => 'string|required',
+            'article_tags' => 'array|required',
+            'image' => 'string|required'
         ]);
 
         $tagArray = $request->get('article_tags');
