@@ -6,13 +6,14 @@ use App\Tags;
 use App\Articles;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Pagination\Paginator;
 
 class ArticlesController extends Controller
 {
 
     public function index()
     {
-        $articles = Articles::All();
+        $articles = Articles::paginate(15);
         return view('dashboard.articles.articles_read', compact('articles'));
     }
 
@@ -61,7 +62,7 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        $articles = Articles::find($id);
+        $articles = Articles::findorfail($id);
 
         return view('dashboard.articles.articles_show', compact('articles'));
     }
