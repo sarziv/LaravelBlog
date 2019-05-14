@@ -31,7 +31,11 @@
                                             @endforeach
                                         </select>
                                     </div>
-
+                                    <!--
+                                    //TODO Marked checkboxes
+                                      implementation:
+                                        compare current tags with tags in database and mark with checkboxes
+                                    -->
                                 </div>
                             </div>
                             <div class="form-group col-6 offset-3">

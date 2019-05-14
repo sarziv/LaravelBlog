@@ -31,7 +31,7 @@
                                     <tr>
                                         <td>
                                             <a href="{{ route('articles.show',$article['id'])}}"
-                                               class="btn btn-primary">View</a>
+                                               class="btn btn-primary">Details</a>
                                         </td>
                                         <td>{{$article['id']}}</td>
                                         <td>{{$article['title']}}</td>
@@ -45,7 +45,7 @@
                                             <form action="{{ route('articles.destroy', $article['id'])}}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button onsubmit="test1()" class="btn btn-danger" type="submit" >Delete</button>
+                                                <button class="btn btn-danger" type="submit" >Delete</button>
                                             </form>
                                         </td>
                                     </tr>
