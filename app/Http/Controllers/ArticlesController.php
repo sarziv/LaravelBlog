@@ -41,15 +41,11 @@ class ArticlesController extends Controller
         //Validate request
         $validated = $request->validated();
 
-        //Array to string change
-        $tagArray = $request->get('article_tags');
-        $taglist = implode(',',$tagArray);
-
         //saving to Articles
         $articles = new Articles([
             'title' => $request->get('title'),
             'article_info' => $request->get('article_info'),
-            'article_tags' => $taglist,
+            'article_tags' => implode(',', $request->get('article_tags')),
             'image' => $request->get('image'),
 
         ]);
@@ -98,12 +94,9 @@ class ArticlesController extends Controller
 
         $article = Articles::findorfail($id);
 
-        $tagArray = $request->get('article_tags');
-        $taglist = implode(',',$tagArray);
-
         $article->title = $request->get('title');
         $article->article_info = $request->get('article_info');
-        $article->article_tags = $taglist;
+        $article->article_tags = implode(',', $request->get('article_tags'));
         $article->image = $request->get('image');
         $article->save();
 

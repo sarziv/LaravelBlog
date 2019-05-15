@@ -10863,3 +10863,9 @@ input[type=checkbox] {
           transform: scale(1.5);
 }
 
+.dashboard {
+  top: 8vh;
+  position: fixed;
+  width: 12vw;
+}
+

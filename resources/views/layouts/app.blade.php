@@ -21,6 +21,7 @@
 <div class="loading">
 @include('Misc.loading')
 </div>
+@include('dashboard.dashboard')
     <div id="app">
         @include('layouts.navbar')
         <main class="py-4">
