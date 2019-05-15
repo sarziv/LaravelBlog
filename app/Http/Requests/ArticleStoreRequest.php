@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Validator;
 
 class ArticleStoreRequest extends FormRequest
 {
@@ -24,10 +25,10 @@ class ArticleStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'string|required',
-            'article_info' => 'string|required',
+            'title' => 'required',
+            'article_info' => 'required',
             'article_tags' => 'array|required',
-            'image' => 'string|required'
+            'image' => 'required'
         ];
     }
 
