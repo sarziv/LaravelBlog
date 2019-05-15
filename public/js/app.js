@@ -36834,6 +36834,8 @@ $(document).ready(function () {
   $('button').click(function () {
     this.form.submit();
     $(this).prop('disabled', true);
+  });
+  $('#submitbutton').click(function () {
     $('.loading').show();
   });
 });

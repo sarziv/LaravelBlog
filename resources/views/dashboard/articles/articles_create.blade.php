@@ -17,17 +17,17 @@
                             </div>
                             <div class="form-group">
                                 <label for="article_info">Article:</label>
-                                <textarea class="form-control" name="article_info" placeholder="Wonderful article right here..."></textarea>
+                                <textarea class="form-control" name="article_info" rows="6" placeholder="Wonderful article right here..."></textarea>
                             </div>
                             <div class="form-group ">
                                 <div class="d-flex justify-content-center">
                                     <div class="dropdown">
-                                        <div class="dropbtn">Select tags</div>
+                                        <div class="dropbtn">Tags</div>
                                         <div class="dropdown-content">
                                             @foreach($taglist as $tag)
                                                     <div class="col-12">
                                                      <label for="{{$tag['tag_name']}}">{{$tag['tag_name']}}</label>
-                                                        <input id="{{$tag['tag_name']}}" type="checkbox" value="{{$tag['tag_name']}}" name="article_tags[]" checked/>
+                                                        <input id="{{$tag['tag_name']}}" type="checkbox" value="{{$tag['tag_name']}}" name="article_tags[]"/>
                                                     </div>
                                             @endforeach
 

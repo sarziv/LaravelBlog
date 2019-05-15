@@ -7,7 +7,9 @@ $(document).ready(function () {
     $('button').click(function() {
         this.form.submit();
         $(this).prop('disabled',true);
-        $('.loading').show();
     });
+    $('#submitbutton').click( function () {
+        $('.loading').show();
+    })
 
 });

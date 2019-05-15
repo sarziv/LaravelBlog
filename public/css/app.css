@@ -10817,11 +10817,10 @@ body {
 
 .dropbtn {
   width: 8vw;
-  background-color: #4CAF50;
-  color: white;
+  border: 1px black solid;
+  color: black;
   padding: 16px;
   font-size: 16px;
-  border: none;
 }
 
 .dropdown {
@@ -10854,7 +10853,8 @@ body {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: black;
+  color: white;
 }
 
 input[type=checkbox] {

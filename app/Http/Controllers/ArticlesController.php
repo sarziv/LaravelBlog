@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArticleStoreRequest;
 use App\Tags;
 use App\Articles;
 use Illuminate\Http\Request;
@@ -34,18 +35,17 @@ class ArticlesController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleStoreRequest $request)
     {
-        $request->validate([
-            'title' => 'string|required',
-            'article_info' => 'string|required',
-            'article_tags' => 'array|required',
-            'image' => 'string|required'
-        ]);
 
+        //Validate request
+        $validated = $request->validated();
+
+        //Array to string change
         $tagArray = $request->get('article_tags');
         $taglist = implode(',',$tagArray);
 
+        //saving to Articles
         $articles = new Articles([
             'title' => $request->get('title'),
             'article_info' => $request->get('article_info'),
@@ -55,7 +55,6 @@ class ArticlesController extends Controller
         ]);
         $articles->save();
         return redirect('/articles')->with('success', 'New article was added.');
-        //TODO add messages
     }
 
     /**
@@ -92,20 +91,19 @@ class ArticlesController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ArticleStoreRequest $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-            'article_info' => 'required',
-            'article_tags' => 'string',
-            'image' => 'string'
-        ]);
+        //Validate request
+        $validated = $request->validated();
+
         $article = Articles::findorfail($id);
-        //TODO article tags , array to sting
+
+        $tagArray = $request->get('article_tags');
+        $taglist = implode(',',$tagArray);
 
         $article->title = $request->get('title');
         $article->article_info = $request->get('article_info');
-        $article->article_tags = $request->get('article_tags');
+        $article->article_tags = $taglist;
         $article->image = $request->get('image');
         $article->save();
 
@@ -124,7 +122,7 @@ class ArticlesController extends Controller
         $articles = Articles::findOrFail($id);
         $articles->delete();
 
-        return redirect('/articles')->with('error', 'Article was deleted!');
+        return back()->with('error', 'Article was deleted!');
     }
 
 }

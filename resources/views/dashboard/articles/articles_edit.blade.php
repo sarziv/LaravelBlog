@@ -21,21 +21,21 @@
                                 <textarea class="form-control" name="article_info" >{{$article['article_info']}}</textarea>
                             </div>
                             <div class="form-group ">
-                                <label for="article_tags">Tags:</label>
                                 <div class="d-flex justify-content-center">
-
-                                    <div>
-                                        <select class="form-control" id="FormControlSelect" name="article_tags">
+                                    <div class="dropdown">
+                                        <div class="dropbtn">Tags</div>
+                                        <div class="dropdown-content">
                                             @foreach($taglist as $tag)
-                                                <option value="{{$tag['tag_name']}}" >{{$tag['tag_name']}}</option>
+                                                <div class="col-12">
+                                                    <label for="{{$tag['tag_name']}}">{{$tag['tag_name']}}</label>
+                                                    <input id="{{$tag['tag_name']}}" type="checkbox" value="{{$tag['tag_name']}}" name="article_tags[]" checked/>
+                                                </div>
                                             @endforeach
-                                        </select>
+
+                                        </div>
+
                                     </div>
-                                    <!--
-                                    //TODO Marked checkboxes
-                                      implementation:
-                                        compare current tags with tags in database and mark with checkboxes
-                                    -->
+
                                 </div>
                             </div>
                             <div class="form-group col-6 offset-3">
@@ -44,7 +44,7 @@
                             </div>
 
 
-                            <button onClick="test()" type="submit" class="btn btn-primary">Update</button>
+                            <button id="submitbutton" type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </div>
                 </div>
