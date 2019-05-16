@@ -10664,7 +10664,7 @@ a.text-dark:focus {
 
 html,
 body {
-  background-color: #fff;
+  background-color: #f1f1f1;
   color: #636b6f;
   font-family: "Nunito", sans-serif;
   font-weight: 200;
@@ -10869,7 +10869,7 @@ input[type=checkbox] {
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color: #b4b4b4;
   position: fixed;
   height: 100%;
   overflow: auto;
